@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+          <script>
+      if (!sessionStorage.getItem('userid')) {
+                    window.location.href = "/login.html";
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access-point Services App</title>
+    <link rel="stylesheet" href="dash.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 id="fullname"></h1>
+        <p>Welcome, let's make payments!</p>
+      </div>
+      <div class="balance">
+        <div>
+          <p>Available Balance</p>
+          <p id="balance" class="amount">₦</p>
+        </div>
+        <a href="fund.html" class="button">Add Money</a>
+      </div>
+      <div class="section">
+        <h2>Access-point.com.ng</h2>
+        <div class="options">
+          <a class="ba" href="https://wa.me/+2347038742142">
+            <div class="option">
+              <span>🏦</span>
+              <p>With Bank</p>
+            </a>
+          </div>
+          <a class="a" href="fund.html">
+            <div class="option">
+              <span>💸</span>
+              <p>With PalmPay</p>
+            </a>
+          </div>
+          <a class="a" href="fund.html">
+            <div class="option">
+              <span>🏧</span>
+              <p>With ATM CARD</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Services</h2>
+        <div class="service-grid" id="serviceGrid">
+          <a href="#" class="service-item" onclick="showComingSoonModal(event)">
+            <div class="service-icon">📱</div>
+            Airtime
+          </a>
+          <a href="data_purchase.html" class="service-item">
+            <div class="service-icon">💾</div>
+            Data
+          </a>
+          <a href="#" class="service-item" onclick="showComingSoonModal(event)">
+            <div class="service-icon">📺</div>
+            CableTV
+          </a>
+          <a href="#" class="service-item" onclick="showComingSoonModal(event)">
+            <div class="service-icon">💡</div>
+            Electricity
+          </a>
+          <a href="profile.html" class="service-item" >
+            <div class="service-icon">👤</div>
+            profile 
+          </a>
+          <a href="#" class="service-item" onclick="showComingSoonModal(event)">
+            <div class="service-icon">💳</div>
+            Virtual Card
+          </a>
+          <a href="#" class="service-item" onclick="showComingSoonModal(event)">
+            <div class="service-icon">🎰</div>
+            Betting
+          </a>
+          <a href="#" class="service-item" onclick="showComingSoonModal(event)">
+            <div class="service-icon">🎁</div>
+            Gift card
+          </a>
+                    <a href="https://wa.me/+2347038742142"class="service-item" >
+            <div class="service-icon">📞</div>
+            Customer support
+          </a>
+                    <a href="#" class="service-item" onclick="showComingSoonModal(event)">
+            <div class="service-icon">✈️</div>
+            Book Flight
+          </a>
+        </div>
+      </div>
+      <div class="banner">
+        <p>Get 10% cashback on transactions!</p>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="comingSoonModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="comingSoonModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="comingSoonModalLabel">Coming Soon</h5>
+            <button
+              type="button"
+              class="close"
+              onclick="closeModal()"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">This service is coming soon. Stay tuned!</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="closeModal()"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Set user info
+      document.querySelector("#fullname").innerHTML = `Hi, ${sessionStorage.getItem('fullname')}`;
+      document.querySelector("#balance").innerHTML = `₦${sessionStorage.getItem('balance')}`;
+
+      // Check if the user is an admin
+      if (sessionStorage.getItem('isAdmin') === 'true') {
+        const serviceGrid = document.querySelector('#serviceGrid');
+
+        // Add the 'See All Users' service item
+        const usersItem = document.createElement('a');
+        usersItem.className = 'service-item';
+        usersItem.href = 'all_users.html';
+        usersItem.innerHTML = `
+          <div class="service-icon">👥</div>
+          See All Users
+        `;
+        serviceGrid.appendChild(usersItem);
+
+        // Add the 'Manual Funding' service item
+        const fundingItem = document.createElement('a');
+        fundingItem.className = 'service-item';
+        fundingItem.href = 'mfund.html';
+        fundingItem.innerHTML = `
+          <div class="service-icon">💰</div>
+          Manual Funding
+        `;
+        serviceGrid.appendChild(fundingItem);
+      }
+
+      // Show the "Coming Soon" modal only when the function is clicked
+      function showComingSoonModal(event) {
+        event.preventDefault();
+        document.getElementById('comingSoonModal').style.display = 'block';
+      }
+
+      // Close the modal
+      function closeModal() {
+        document.getElementById('comingSoonModal').style.display = 'none';
+      }
+
+      // Ensure modal is hidden on page load
+      window.onload = function() {
+        closeModal();
+      };
+    </script>
+  </body>
+</html>

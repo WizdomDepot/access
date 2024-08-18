@@ -1,0 +1,63 @@
+0 verbose cli /apex/com.android.runtime/bin/linker64 /data/data/com.termux/files/usr/bin/npm
+1 info using npm@10.8.2
+2 info using node@v22.5.1
+3 silly config load:file:/data/data/com.termux/files/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/data/com.termux/files/home/.npmrc
+5 silly config load:file:/data/data/com.termux/files/usr/etc/npmrc
+6 verbose title npm install @cloudflare/wrangler
+7 verbose argv "install" "--global" "@cloudflare/wrangler"
+8 verbose logfile logs-max:10 dir:/data/data/com.termux/files/home/.npm/_logs/2024-08-18T02_47_30_703Z-
+9 verbose logfile /data/data/com.termux/files/home/.npm/_logs/2024-08-18T02_47_30_703Z-debug-0.log
+10 silly packumentCache heap:1098907648 maxSize:274726912 maxEntrySize:137363456
+11 silly logfile done cleaning log files
+12 silly idealTree buildDeps
+13 silly fetch manifest @cloudflare/wrangler@*
+14 silly packumentCache full:https://registry.npmjs.org/@cloudflare%2fwrangler cache-miss
+15 http fetch GET 200 https://registry.npmjs.org/@cloudflare%2fwrangler 71ms (cache hit)
+16 silly packumentCache full:https://registry.npmjs.org/@cloudflare%2fwrangler set size:429488 disposed:false
+17 silly placeDep ROOT @cloudflare/wrangler@1.21.0 OK for:  want: *
+18 silly fetch manifest axios@^0.21.1
+19 silly packumentCache full:https://registry.npmjs.org/axios cache-miss
+20 silly fetch manifest rimraf@^3.0.2
+21 silly packumentCache full:https://registry.npmjs.org/rimraf cache-miss
+22 silly fetch manifest tar@^6.1.10
+23 silly packumentCache full:https://registry.npmjs.org/tar cache-miss
+24 http fetch GET 200 https://registry.npmjs.org/rimraf 48ms (cache hit)
+25 silly packumentCache full:https://registry.npmjs.org/rimraf set size:191598 disposed:false
+26 http fetch GET 200 https://registry.npmjs.org/tar 63ms (cache hit)
+27 silly packumentCache full:https://registry.npmjs.org/tar set size:398957 disposed:false
+28 http fetch GET 200 https://registry.npmjs.org/axios 90ms (cache hit)
+29 silly packumentCache full:https://registry.npmjs.org/axios set size:560291 disposed:false
+30 silly reify moves {}
+31 warn deprecated @cloudflare/wrangler@1.21.0: This package is for Wrangler v1.x and is no longer supported. Please visit https://www.npmjs.com/package/wrangler for Wrangler v2+.
+32 info run @cloudflare/wrangler@1.21.0 postinstall node_modules/@cloudflare/wrangler node ./install-wrangler.js
+33 info run @cloudflare/wrangler@1.21.0 postinstall { code: 1, signal: null }
+34 verbose stack Error: command failed
+34 verbose stack     at promiseSpawn (/data/data/com.termux/files/usr/lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js:22:22)
+34 verbose stack     at spawnWithShell (/data/data/com.termux/files/usr/lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js:124:10)
+34 verbose stack     at promiseSpawn (/data/data/com.termux/files/usr/lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js:12:12)
+34 verbose stack     at runScriptPkg (/data/data/com.termux/files/usr/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/run-script-pkg.js:77:13)
+34 verbose stack     at runScript (/data/data/com.termux/files/usr/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/run-script.js:9:12)
+34 verbose stack     at /data/data/com.termux/files/usr/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/rebuild.js:329:17
+34 verbose stack     at run (/data/data/com.termux/files/usr/lib/node_modules/npm/node_modules/promise-call-limit/dist/commonjs/index.js:67:22)
+34 verbose stack     at /data/data/com.termux/files/usr/lib/node_modules/npm/node_modules/promise-call-limit/dist/commonjs/index.js:84:9
+34 verbose stack     at new Promise (<anonymous>)
+34 verbose stack     at callLimit (/data/data/com.termux/files/usr/lib/node_modules/npm/node_modules/promise-call-limit/dist/commonjs/index.js:35:69)
+35 verbose pkgid @cloudflare/wrangler@1.21.0
+36 error code 1
+37 error path /data/data/com.termux/files/usr/lib/node_modules/@cloudflare/wrangler
+38 error command failed
+39 error command sh -c node ./install-wrangler.js
+40 silly unfinished npm timer reify 1723949251937
+41 silly unfinished npm timer reify:build 1723949252713
+42 silly unfinished npm timer build 1723949252714
+43 silly unfinished npm timer build:deps 1723949252714
+44 silly unfinished npm timer build:run:postinstall 1723949252734
+45 silly unfinished npm timer build:run:postinstall:node_modules/@cloudflare/wrangler 1723949252735
+46 verbose cwd /data/data/com.termux/files/home
+47 verbose os Linux 5.10.198-android12-9-00036-g85b72e945a8d-ab11958844
+48 verbose node v22.5.1
+49 verbose npm  v10.8.2
+50 verbose exit 1
+51 verbose code 1
+52 error A complete log of this run can be found in: /data/data/com.termux/files/home/.npm/_logs/2024-08-18T02_47_30_703Z-debug-0.log

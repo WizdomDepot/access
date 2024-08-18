@@ -1,0 +1,19 @@
+0 verbose cli /apex/com.android.runtime/bin/linker64 /data/data/com.termux/files/usr/bin/npm
+1 info using npm@10.8.2
+2 info using node@v22.5.1
+3 silly config load:file:/data/data/com.termux/files/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/.npmrc
+5 silly config load:file:/data/data/com.termux/files/home/.npmrc
+6 silly config load:file:/data/data/com.termux/files/usr/etc/npmrc
+7 verbose title npm config set foreground-scripts true
+8 verbose argv "config" "set" "foreground-scripts" "true"
+9 verbose logfile logs-max:10 dir:/data/data/com.termux/files/home/.npm/_logs/2024-08-16T12_40_23_373Z-
+10 verbose logfile /data/data/com.termux/files/home/.npm/_logs/2024-08-16T12_40_23_373Z-debug-0.log
+11 info config set "foreground-scripts" "true"
+12 silly logfile done cleaning log files
+13 verbose cwd /
+14 verbose os Linux 5.10.198-android12-9-00036-g85b72e945a8d-ab11958844
+15 verbose node v22.5.1
+16 verbose npm  v10.8.2
+17 verbose exit 0
+18 info ok
