@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.top-bar2 {
+  background-color: #728f02; 
+  color: white;
+  height: 10vh;
+  padding: 10px;
+  font-size: 2em;
+  text-align: center;
+}
+.funding-section {
+  background-color: #f0f0f0; /* Light grey background */
+  padding: 20px;
+  margin-top: 10px;
+}
+.funding-section h2 {
+  margin-bottom: 20px;
+}
+.form-field {
+  margin-bottom: 10px;
+}
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form-field input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.continue-button {
+  background-color: #FFA500; /* Orange color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+.support-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.support-icons img {
+  width: 50px;
+  margin: 0 10px;
+}
+
+/* Add this class to your HTML button element */
+.luxury-button {
+  padding: 10px 20px;
+  background-color: #D4AF37; /* Luxurious Gold Color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.luxury-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.luxury-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
