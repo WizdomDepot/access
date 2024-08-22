@@ -27,7 +27,7 @@ const networkOptions = {
 
 let plan_d;
 let data_p;
-fetch('http://localhost:8081/pricing.php', {
+fetch('https://culpa.com.ng/pricing.php', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -126,7 +126,7 @@ const p_data = {
   ... data_p,admin,userId,mobileNumber };
 
     try {
-        const response = await fetch("https://culpa.com.ng/api/user/data_purchase", {
+        const response = await fetch("https://culpa.com.ng/data_purchase.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
