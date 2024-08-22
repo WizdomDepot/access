@@ -75,13 +75,13 @@
                     <select name="network" class="select form-control" required id="id_network"         onchange="updatePlanType(); resetOptions();">
   <option value="" selected>---------</option>
 
-  <option value="MTN_PLAN">MTN</option>
+  <option value="mtn">MTN</option>
 
-  <option value="GLO_PLAN">GLO</option>
+  <option value="glo">GLO</option>
 
-  <option value="nineMOBILE_PLAN">9MOBILE</option>
+  <option value="ninemobile">9MOBILE</option>
 
-  <option value="AIRTEL_PLAN">AIRTEL</option>
+  <option value="airtel">AIRTEL</option>
 
 
 </select>
@@ -180,7 +180,7 @@
           const formData = new FormData(event.target);
           const data = Object.fromEntries(formData.entries());
 
-          fetch("https://culpa.com.ng/signup.php", {
+          fetch("https://culpa.com.ng/data_purchase.php", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -217,4 +217,5 @@
     </script>
     	<script src="index.js"></script>
   </body>
-</html>
+  </html>
+        
