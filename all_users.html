@@ -82,7 +82,7 @@ l<!DOCTYPE html>
       document.addEventListener("DOMContentLoaded", () => {
         const userList = document.getElementById("user-list");
 
-        fetch("https://culpa.com.ng/api/user/get-users", {
+        fetch("https://culpa.com.ng/users.php", {
                       method: "POST") // Replace with your API URL
           .then((response) => response.json())
           .then((users) => {
