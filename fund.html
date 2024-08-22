@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
-      if (sessionStorage.getItem("userid")) {
+      if (!sessionStorage.getItem("userid")) {
         window.location.href = "/login.html";
       }
     </script>
@@ -91,7 +91,7 @@
                   if (response.status === "success") {
                     const userId = sessionStorage.getItem("userid");
 
-                    fetch("https://culpa.com.ng/api/user/payment-success", {
+                    fetch("https://culpa.com.ng/fund.php", {
                       method: "POST",
                       headers: {
                         "Content-Type": "application/json",
