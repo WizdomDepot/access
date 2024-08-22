@@ -107,7 +107,7 @@
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData.entries());
 
-        fetch("https://culpa.com.ng/api/user/login", {
+        fetch("https://culpa.com.ng/login.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
