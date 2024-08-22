@@ -163,7 +163,7 @@
           const formData = new FormData(event.target);
           const data = Object.fromEntries(formData.entries());
 
-          fetch("https://culpa.com.ng/api/user/Signup", {
+          fetch("https://culpa.com.ng/signup.php", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -174,7 +174,7 @@
             .then((data) => {
               console.log(data);
               showModal(data.message);
-              if (data.issuccess === "true") {
+              if (data.issuccess = true) {
                 window.location.href = "/login.html";
               }
             })
