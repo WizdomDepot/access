@@ -1,5 +1,5 @@
 const networkOptions = {
-    MTN_PLAN: [
+    mtn: [
         { text: "SME", value: "SME" },
         { text: "SME2", value: "SME2" },
         { text: "CORPORATE GIFTING", value: "CORPORATE" },
@@ -7,44 +7,35 @@ const networkOptions = {
         { text: "GIFTING", value: "GIFTING" },
         { text: "ALL", value: "ALL" },
     ],
-    GLO_PLAN: [
+    glo: [
         { text: "CORPORATE GIFTING", value: "CORPORATE" },
         { text: "GIFTING", value: "GIFTING" },
         { text: "ALL", value: "ALL" },
     ],
-    AIRTEL_PLAN: [
+    airtel: [
         { text: "CORPORATE GIFTING", value: "CORPORATE" },
         { text: "GIFTING", value: "GIFTING" },
         { text: "ALL", value: "ALL" },
     ],
-    nineMOBILE_PLAN: [
+    ninemobile: [
         { text: "CORPORATE GIFTING", value: "CORPORATE" },
         { text: "SME", value: "SME" },
         { text: "ALL", value: "ALL" },
     ]
 };
 
-const planOptions = {
-    SME: [
-        { text: "1GB", value: "1GB" },
-        { text: "2GB", value: "2GB" }
-    ],
-    GIFTING: [
-        { text: "500MB", value: "500MB" },
-        { text: "1GB", value: "1GB" }
-    ],
-    CORPORATE: [
-        { text: "5GB", value: "5GB" },
-        { text: "10GB", value: "10GB" }
-    ]
-};
 
 let plan_d;
 let data_p;
-fetch('https://culpa.com.ng/api/user/pricing')
+fetch('http://localhost:8081/pricing.php', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          }})
     .then(response => response.json())
     .then(data => {
-        plan_d = data.alld;
+        plan_d = [data];
+      console.log(plan_d)
     })
     .catch(error => console.error('Error fetching data:', error));
 
@@ -73,6 +64,7 @@ function updatePlanType() {
 }
 
 function updatePlan() {
+  console.log("cloud")
     const networkType = document.getElementById("id_network").value;
     const planType = document.getElementById("id_data_type").value;
     const plan = document.getElementById("plan");
@@ -80,10 +72,12 @@ function updatePlan() {
     document.getElementById("id_Amount").value = ""
 
     if (plan_d) {
+      console.log(plan_d)
         plan_d.forEach(networkPlan => {
             if (networkPlan[networkType] && networkPlan[networkType][planType]) {
                 plan.options.add(new Option("-----", ""));
-                networkPlan[networkType][planType].forEach((option) => {
+               console.log(networkPlan[networkType][planType])
+               networkPlan[networkType][planType].forEach((option) => {
                     plan.options.add(new Option(`${option.plan_type} - ${option.plan} (${option.month_validate} months)`, option.id));
                 });
             }
@@ -179,3 +173,4 @@ function showModal(message) {
 }
 
 
+                                            
