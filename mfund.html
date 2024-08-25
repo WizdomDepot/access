@@ -66,6 +66,13 @@
               placeholder="userId"
               required=""
             />
+            <input
+              class="text w3lpass"
+              type="hidden"
+              name="admin"
+              value="7056522"
+              required=""
+            />
             <br />
             <input 
               class="text"
@@ -112,7 +119,7 @@
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData.entries());
 
-        fetch("https://culpa.com.ng/api/user/update-balance", {
+        fetch("https://culpa.com.ng/update-balance.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
