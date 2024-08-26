@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
-      if (!sessionStorage.getItem("userid")) {
+      if (sessionStorage.getItem("userid")) {
         window.location.href = "/login.html";
       }
     </script>
@@ -105,9 +105,10 @@
                       .then((response) => response.json())
                       .then((data) => {
                         alert("Payment successful! " + data.message);
-                        const old = sessionStorage.getItem('balance')
-                     const newb = old + parseInt(amount)
+                     const old = sessionStorage.getItem('balance')
+                     const newb = parseInt(old) + parseInt(amount)
                         sessionStorage.setItem('balance', newb);
+                        
                         window.location.href = "/dash.html"; // Redirect to dashboard
                       })
                       .catch((error) => {
