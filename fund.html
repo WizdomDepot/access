@@ -105,6 +105,9 @@
                       .then((response) => response.json())
                       .then((data) => {
                         alert("Payment successful! " + data.message);
+                        const old = sessionStorage.getItem('balance')
+                     const newb = old + parseInt(amount)
+                        sessionStorage.setItem('balance', newb);
                         window.location.href = "/dash.html"; // Redirect to dashboard
                       })
                       .catch((error) => {
