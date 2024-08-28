@@ -182,6 +182,35 @@
       window.onload = function() {
         closeModal();
       };
+      window.addEventListener("load", function(event) {
+  const data2 = {
+    email: sessionStorage.getItem('email'),
+    admin: '7056522'
+  }
+    fetch("https://culpa.com.ng/reload.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data2),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+        console.log(data)
+                    showModal(data.message);
+          if (data.issuccess = true) {
+            sessionStorage.setItem("user", JSON.stringify(data.user));
+            console.log(data.user)
+            sessionStorage.setItem('userid', data.user.userid);
+            sessionStorage.setItem('admin', data.user.admin);
+            sessionStorage.setItem('email', data.user.email);
+            sessionStorage.setItem('fullname', data.user.fullname);
+            sessionStorage.setItem('phone', data.user.phone);
+            sessionStorage.setItem('balance', data.user.balance);
+            sessionStorage.setItem('isAdmin', data.user.isAdmin);
+          }
+});
+});
     </script>
   </body>
 </html>
